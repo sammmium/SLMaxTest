@@ -1,0 +1,111 @@
+{% extends 'base.twig' %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    <link rel="stylesheet" href="../../public/css/dashboard.css">
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    <script src="../../public/js/jquery.min.js"></script>
+    <script src="../../public/js/jquery-ui.js"></script>
+    <script src="../../public/js/jquery.maskedinput.min.js"></script>
+    <script src="../../public/js/dashboard.js"></script>
+{% endblock %}
+
+{% block content %}
+    <div class="dashboard">
+        <div class="dashboard-title col-12">Список персон</div>
+
+        <div class="dashboard-table col-12">
+            {% if people|length > 0 %}
+
+
+                <form name="selected_person" method="post" action="people/delete-selected">
+                    {% for person in people %}
+                        <div class="row">
+                            <div class="col-1 label-input">
+                                <label for="contact-parent" class="label">&nbsp;</label>
+                                <div id="contact-parent" class="value">{{ loop.index }}</div>
+                            </div>
+                            <div class="col-4 label-input">
+                                <label for="contact-parent" class="label">Фамилия</label>
+                                <div id="contact-parent" class="value">{{ person['lastname'] }}</div>
+                            </div>
+                            <div class="col-4 label-input">
+                                <label for="contact-parent" class="label">Имя</label>
+                                <div id="contact-parent">{{ person['firstname'] }}</div>
+                            </div>
+                            <div class="col-3 label-input">
+                                <label for="contact-phone" class="label">Пол</label>
+                                <div id="contact-phone">{{ person['sex'] }}</div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-1 label-input">
+                                <div id="contact-parent" class="value">
+                                    <input type="checkbox" id="{{ person['id'] }}" name="person[{{ person['id'] }}]">
+                                </div>
+                            </div>
+                            <div class="col-4 label-input">
+                                <label for="contact-parent" class="label">Дата рождения</label>
+                                <div id="contact-parent">{{ person['birthdate'] }}</div>
+                            </div>
+                            <div class="col-4 label-input">
+                                <label for="contact-parent" class="label">Возраст</label>
+                                <div id="contact-parent">{{ person['age'] }}</div>
+                            </div>
+                            <div class="col-3 label-input">
+                                <label for="contact-phone" class="label">&nbsp;</label>
+                                <div id="contact-phone">
+                                    <a href="person/delete/{{ person['id'] }}" class="button">Удалить</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <hr>
+                    {% endfor %}
+
+                    <div class="buttons">
+                        <div class="row">
+                            <div class="col-4 label-input">
+                                <a href="person/generate">
+                                    <span class="button">Создать персону</span>
+                                </a>
+                            </div>
+                            <div class="col-4 label-input">
+                                <a href="#" class="button-select-all">
+                                    <span class="button">Выделить всех</span>
+                                </a>
+                                <a href="#" class="button-unselect-all hidden">
+                                    <span class="button">Снять выделение</span>
+                                </a>
+                            </div>
+                            <div class="col-4 label-input">
+                                <input type="submit" value="Удалить выбранных">
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            {% else %}
+                <div class="contact-item">
+                    <div class="info">
+                        <div class="row">
+                            Данные для отображения осутствуют
+                        </div>
+
+                        <hr>
+
+                        <div class="row">
+                            <div class="col-4 label-input">
+                                <a href="person/generate">
+                                    <span class="button">Создать персону</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            {% endif %}
+        </div>
+    </div>
+{% endblock %}

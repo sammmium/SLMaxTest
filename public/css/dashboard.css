@@ -1,0 +1,22 @@
+.container .main-content .container-content .content .dashboard {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.container .main-content .container-content .content .dashboard .dashboard-title {
+    font-size: 26px;
+    font-style: italic;
+    font-weight: 700;
+    border-bottom: 1px solid #cccccc;
+    line-height: 45px;
+    padding: 10px 0;
+}
+
+.container .main-content .container-content .content .dashboard .dashboard-table {
+    text-align: center;
+}
+
+.label {
+    color: #cccccc;
+}

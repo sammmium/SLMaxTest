@@ -1,0 +1,120 @@
+body {
+    display: flex;
+    font-family: "JetBrains Mono";
+    font-size: 16px;
+}
+.col-12 {
+    width: 100%;
+}
+.col-11 {
+    width: 91.3%;
+}
+.col-10 {
+    width: 83%;
+}
+.col-9 {
+    width: 74.7%;
+}
+.col-8 {
+    width: 66.4%;
+}
+.col-7 {
+    width: 58.1%;
+}
+.col-6 {
+    width: 49.8%;
+}
+.col-5 {
+    width: 41.5%;
+}
+.col-4 {
+    width: 33.2%;
+}
+.col-3 {
+    width: 24.9%;
+}
+.col-2 {
+    width: 16.6%;
+}
+.col-1 {
+    width: 8.3%;
+}
+.container {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    width: 100%;
+}
+.container .main-content {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+.container .container-logo {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+.container .container-logo .logo {
+    font-size: 34px;
+    text-align: left;
+    height: 50px;
+    margin: 10px;
+}
+div.row {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin: 10px 0;
+}
+
+.container .main-content .container-content {
+    display: flex;
+    width: 100%;
+}
+
+.container .main-content .container-content .content {
+    font-size: 20px;
+    text-align: justify;
+    margin: 10px;
+}
+
+.container .main-content .container-footer {
+    display: flex;
+    justify-content: center;
+    height: 40px;
+    font-size: 20px;
+    font-style: italic;
+    color: #565353FF;
+}
+
+.error {
+    background: #FCB7BDFF;
+    border: 1px solid #FF0000;
+}
+
+div.label-input a {
+    display: flex;
+    justify-content: center;
+    text-decoration: none;
+}
+
+div.label-input div {
+    display: flex;
+    justify-content: center;
+    text-decoration: none;
+}
+
+.button {
+    border: 1px solid #cccccc;
+    background: #eeeeee;
+    width: 150px;
+    padding: 5px;
+    text-align: center;
+    text-decoration: none;
+    color: black;
+}
+
+div.label-input a.hidden {
+    display: none;
+}
